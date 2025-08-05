@@ -9,8 +9,8 @@ Background:
 
 @appianHome   
 Scenario: User navigates to Home Page
-        Then User should see the Reinsurance text
-      
+       
+       Then User should see the Reinsurance text
 
     
 
