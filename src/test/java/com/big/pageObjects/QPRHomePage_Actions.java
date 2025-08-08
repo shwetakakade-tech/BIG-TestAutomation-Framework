@@ -18,13 +18,15 @@ public class QPRHomePage_Actions extends TestReusables {
 	}
 
 	
-	 @FindBy(xpath =" ")
-	 private  WebElement searchCase;
+	 @FindBy(xpath ="//input[@class=\"TextInput---text TextInput---align_start TextInput---inSideBySideItem\"][1]")
+	 private  WebElement searchCaseForUnassignedPrograms;
 
+	 @FindBy(xpath="//button//span[text()=\"Search\"][1]")
+	 private WebElement searchButtonForCaseNumber;
 
-
-	public void searchCaseNumber() {
-		
+	public void searchCaseNumber(String searchCaseID) {
+		enterText(searchCaseForUnassignedPrograms, "caseNumber",searchCaseID);
+		click(searchButtonForCaseNumber, searchCaseID); 
 		System.out.println("Search Case Number");
 	}
 

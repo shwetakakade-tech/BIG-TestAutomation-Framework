@@ -326,7 +326,7 @@ public class CommonObj extends TestReusables{
 		  }
 		 
 		//just pass name of category u want to play with
-	public void appiannavigationmenu(String category) throws InterruptedException 
+	public void appianNavigationMenu(String category) throws InterruptedException 
 			{	
 				driver.findElement(By.xpath("(//li[@title='"+category+"'])[2]")).click();
 				Thread.sleep(5000);
@@ -335,7 +335,7 @@ public class CommonObj extends TestReusables{
 				waitForPageToLoad(driver,  null, 30); 
 				}
 	
-	public void appiannavigationoptions(String option) throws InterruptedException 
+	public void appianNavigationOptions(String option) throws InterruptedException 
 	{	
 		driver.findElement(By.xpath("//div[contains(text(),'"+option+"')]")).click();
 		Thread.sleep(5000);

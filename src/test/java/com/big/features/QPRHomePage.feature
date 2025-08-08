@@ -9,7 +9,8 @@ Background:
  
 @appianhome   
 Scenario Outline: User navigates to Home tab 
-    Given User selects the case "#133563" from the list
+    #Given User selects the case "#133563" from the list
+    Given User searches the case ID "133570" from the list
     And User navigate to "<CaseMenu>" CaseMenu tab
     When User navigate to "Program Filing / Preparation" paragraphtab
     And User selects "<PrograamType>" of case
