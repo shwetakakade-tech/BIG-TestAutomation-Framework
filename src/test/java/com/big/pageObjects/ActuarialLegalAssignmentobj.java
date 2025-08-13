@@ -1,0 +1,98 @@
+package com.big.pageObjects;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.FindBy;
+
+import com.big.utils.ScenarioContext;
+import com.big.utils.TestReusables;
+import com.big.utils.Utilities;
+
+public class ActuarialLegalAssignmentobj extends TestReusables {
+
+	
+	 ScenarioContext sc = new ScenarioContext();
+	    static Utilities ut = new Utilities();
+	    public static RemoteWebDriver driver= ut.getDriver();
+	    public ActuarialLegalAssignmentobj() 
+	    {
+	        super();
+	    }
+	    
+	    @FindBy(xpath="//div[@class=\"RecordActionWidget---button_layout_wrapper RecordActionWidget---align_start\"]//div[1]//div//button//span//span[2]")
+	    List<WebElement> actionsTabs;
+	    
+	    @FindBy(xpath="//input[@class=\"PickerWidget---picker_input PickerWidget---placeholder\"]")
+	    WebElement actuarialUser;
+	    
+	    @FindBy(xpath="//input[@class=\"PickerWidget---picker_input PickerWidget---placeholder\"]")
+	    WebElement legalUser;
+	    
+	    @FindBy(xpath="//span[text()=\"Submit\"]")
+	    WebElement submitButton;
+	    
+	    @FindBy(xpath="//strong[contains(text(),'Actuarial Analyst')]/parent::p")
+	    WebElement actuarialAnalyst;
+	    
+	    @FindBy(xpath="//strong[contains(text(),'Legal Analyst')]/parent::p")
+	    WebElement legalAnalyst;
+	    
+	    public void selectActions(String actions) throws InterruptedException {
+	         WebElement Actions = driver.findElement(By.xpath("(//span[@class='SizedText---medium_plus SizedText---predefined'])[2]"));
+	         Thread.sleep(3000);
+	         scrolltoElement(Actions);
+	         for (WebElement ActionsTab : actionsTabs) {                
+	                if (ActionsTab.getText().equalsIgnoreCase(actions)) {
+	                    System.out.print(actions);
+	                    System.out.println("ActionsTab: "+ ActionsTab.getText()); 
+	                   // scrolltoElement(Actions);
+	                    Thread.sleep(4000);
+	                    clickUsingJS(ActionsTab, "actions"); 
+	                    break;  
+	                }
+	            }
+	    }
+	    public void selectActuarialAnalysis(String str1) throws InterruptedException {
+	      Thread.sleep(6000);
+	      //System.out.print("Text123456789"+AssignProgram);
+	      enterText(actuarialUser,"actuarialanalysis", str1);
+	      System.out.print("enter texted successfuly");
+	      Thread.sleep(2000);
+	      keybordentry("Enter");
+	      Thread.sleep(2000);
+	      click(submitButton, "confirm_btn"); 
+	      Thread.sleep(4000);
+	      }
+	    
+	    public void selectLegalAnalysis(String str2) throws InterruptedException {
+		      Thread.sleep(6000);
+		      enterText(legalUser,"legalanalysis", str2);
+		      System.out.print("enter texted successfuly");
+		      Thread.sleep(2000);
+		      keybordentry("Enter");
+		      Thread.sleep(2000);
+		      click(submitButton, "confirm_btn"); 
+		      Thread.sleep(4000);
+		      }
+	    public boolean isActuarialAnalystBlank() throws InterruptedException 
+	    {
+	Thread.sleep(3000);
+	        String actuariallabel = actuarialAnalyst.getText().replace("Actuarial Analyst", "").trim();
+	        System.out.println(actuarialAnalyst.getText());
+	        System.out.println("GeetText"+actuariallabel);
+	        return actuariallabel.isEmpty();
+	    }
+	    public boolean isLegalAnalystBlank() throws InterruptedException 
+	    {
+	Thread.sleep(3000);
+	        String legallabel = legalAnalyst.getText().replace("Legal Analyst", "").trim();
+	        System.out.println(legalAnalyst.getText());
+	        System.out.println("GeetText"+legallabel);
+	        return legallabel.isEmpty();
+	    }
+	    
+	}
+

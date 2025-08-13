@@ -15,9 +15,8 @@ import io.cucumber.testng.CucumberOptions;
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 features = {"src/test/java/com/big/features"},
 glue={"com.big.stepdef"},
-monochrome = true,
-tags = "@AssignUnderwriter", 
-
+monochrome = true, 
+tags = "@actuarialassignment or @legalassignment",
 dryRun = false
 )
 

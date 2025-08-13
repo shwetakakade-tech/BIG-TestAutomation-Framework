@@ -13,7 +13,7 @@ import com.big.utils.TestReusables;
 import com.big.utils.Utilities;
 
 public class HomePage_Actions extends TestReusables {
-	Utilities ut = new Utilities();
+	 Utilities ut = new Utilities();
 
 	public HomePage_Actions() {
 		super();
@@ -46,7 +46,15 @@ public class HomePage_Actions extends TestReusables {
 	 * * @author Dhanesh Bhor
 	 * @date August 6, 2025
 	 */
-
+	@FindBy(xpath="//tbody//tr//td//div//p//a")
+    List<WebElement> CaseIDlinks;
+    
+    @FindBy(xpath="//div[@class='TabButtonGroup---tab_button_group TabButtonGroup---margin_above_none']//ul//li//a")
+    List<WebElement> CaseMenuOptions;
+    
+    @FindBy(xpath="//div[@class='MultiColumnLayout---column_layout MultiColumnLayout---margin_below_standard MultiColumnLayout---margin_above_none MultiColumnLayout---stack_when_phone']//p[@class='ParagraphText---richtext_paragraph ParagraphText---default_direction ParagraphText---align_start elements---global_p']")
+    List<WebElement> ParagraphTabs;
+    
 	public void searchCaseNumber(String searchCaseID) {
 
 		enterText(searchCaseForUnassignedPrograms, "caseNumber",searchCaseID);
@@ -99,7 +107,25 @@ public class HomePage_Actions extends TestReusables {
 		System.out.println("using excel sheet "+caseNumber);
 	}
 
-
+	  public void user_navigate_to_casemenu(String caseMenu) {
+          for (WebElement casemenu : CaseMenuOptions) {
+                 if (casemenu.getText().equalsIgnoreCase(caseMenu)) {
+                     System.out.println("CaseMenu: "+ casemenu.getText());
+                     clickUsingJS(casemenu, "caseMenu"); 
+                     break;  
+                 }
+             }    
+     }
+     public void user_navigate_to_paragraphtabs(String paragraphTab) throws InterruptedException {
+          for (WebElement ParagraphTab : ParagraphTabs) {
+                 if (ParagraphTab.getText().equalsIgnoreCase(paragraphTab)) {
+                     System.out.println("ParagraphTab: "+ ParagraphTab.getText());
+                     Thread.sleep(3000);
+                     clickUsingJS(ParagraphTab, "paragraphTab"); 
+                     break;  
+                 }
+             }
+     }
 
 
 

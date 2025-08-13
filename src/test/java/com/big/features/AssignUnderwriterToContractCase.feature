@@ -1,4 +1,3 @@
-
 @AssignUnderwriter
 Feature: Assign Underwriter and Underwriter Team
 
@@ -8,7 +7,7 @@ Feature: Assign Underwriter and Underwriter Team
    Then User navigates to Home category
 
   Scenario Outline: Assign Underwriter and UW Team
-  	When User opens a contract case "133549" from the Home tab
+  	When User opens a contract case "133539" from the Home tab
     And No Underwriter or UW Team is assigned 
     When User clicks on the ASSIGN UNDERWRITER action 
     And User selects Underwriting Team and Underwriter for "TC_001"

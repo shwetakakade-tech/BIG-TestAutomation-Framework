@@ -201,15 +201,16 @@ public class Utilities {
 	public String getCellValue(String Sheetname, String testName, String colName) {
 		String cellValue = null;
 		try {
-			FileInputStream fis = new FileInputStream("" + System.getProperty("user.dir") + "\\TestData.xlsx");
+			FileInputStream fis = new FileInputStream(""+ System.getProperty("user.dir")+"\\TestData.xlsx");
 			Workbook wb = new XSSFWorkbook(fis);
 			Sheet ws = wb.getSheet(Sheetname);
-			for (int i = 0; i <= ws.getLastRowNum(); i++) {
+			for (int i = 0; i <= ws.getLastRowNum();i++) {
 				if (ws.getRow(i).getCell(0).getStringCellValue().equalsIgnoreCase(testName)) {
 					for (int j = 0; j <= ws.getRow(i).getLastCellNum(); j++) {
 						if (ws.getRow(0).getCell(j).getStringCellValue().equalsIgnoreCase(colName)) {
 							cellValue = ws.getRow(i).getCell(j).getStringCellValue();
 							break;
+							
 						}
 					}
 					break;
