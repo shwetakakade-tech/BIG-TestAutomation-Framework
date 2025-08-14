@@ -1,43 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-08T12:02:19 IST" name="Command line suite" finished-at="2025-08-08T12:02:56 IST" duration-ms="37841">
+  <suite started-at="2025-08-14T14:09:50 IST" name="Command line suite" finished-at="2025-08-14T14:11:33 IST" duration-ms="103026">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.big.TestRunners.CucumberRunner@319988b0]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.big.TestRunners.CucumberRunner@63192798]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-08-08T12:02:19 IST" name="Command line test" finished-at="2025-08-08T12:02:56 IST" duration-ms="37841">
+    <test started-at="2025-08-14T14:09:50 IST" name="Command line test" finished-at="2025-08-14T14:11:33 IST" duration-ms="103026">
       <class name="com.big.TestRunners.CucumberRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.big.TestRunners.CucumberRunner@319988b0]" started-at="2025-08-08T12:02:19 IST" name="setUpClass" finished-at="2025-08-08T12:02:19 IST" duration-ms="527" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.big.TestRunners.CucumberRunner@63192798]" started-at="2025-08-14T14:09:50 IST" name="setUpClass" finished-at="2025-08-14T14:09:50 IST" duration-ms="506" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@2fcffc05]]>
+                <![CDATA[org.testng.TestRunner@a859c5]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.big.TestRunners.CucumberRunner@319988b0]" started-at="2025-08-08T12:02:19 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-08T12:02:56 IST" duration-ms="37118" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.big.TestRunners.CucumberRunner@63192798]" started-at="2025-08-14T14:09:50 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-14T14:10:42 IST" duration-ms="51319" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Assign Underwriter and UW Team"]]>
+                <![CDATA["User should be able to do Actuarial Assignment"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Assign Underwriter and Underwriter Team"]]>
+                <![CDATA["This feature file allow user to perform ACTUARIAL & LEGAL ASSIGNMENT Actions"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.big.TestRunners.CucumberRunner@319988b0]" started-at="2025-08-08T12:02:56 IST" name="tearDownClass" finished-at="2025-08-08T12:02:56 IST" duration-ms="146" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.big.TestRunners.CucumberRunner@63192798]" started-at="2025-08-14T14:10:42 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-14T14:11:33 IST" duration-ms="50954" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User should be able to do Legal Assignment"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature file allow user to perform ACTUARIAL & LEGAL ASSIGNMENT Actions"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.big.TestRunners.CucumberRunner@63192798]" started-at="2025-08-14T14:11:33 IST" name="tearDownClass" finished-at="2025-08-14T14:11:33 IST" duration-ms="201" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
