@@ -43,70 +43,81 @@
   </properties>
 
   <dependencies>
+  
+ <dependency>
+    <groupId>com.sun.mail</groupId>
+    <artifactId>javax.mail</artifactId>
+    <version>1.6.2</version>
+</dependency>
+<dependency>
+    <groupId>javax.activation</groupId>
+    <artifactId>activation</artifactId>
+    <version>1.1.1</version>
+</dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>${junit.version}</version>
-     <!-- <scope>test</scope> -->
+			<!-- <scope>test</scope> -->
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 	<dependency>
 	    <groupId>org.testng</groupId>
 	    <artifactId>testng</artifactId>
 	    <version>${testng.version}</version>
-	  <!-- <scope>test</scope>-->
+			<!-- <scope>test</scope>-->
 	</dependency>
-    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
 	<dependency>
 	    <groupId>io.cucumber</groupId>
 	    <artifactId>cucumber-java</artifactId>
 	    <version>${cucumberjava.version}</version>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
 	<dependency>
 	    <groupId>io.cucumber</groupId>
 	    <artifactId>cucumber-junit</artifactId>
 	    <version>${cucumberjunit.version}</version>
-	    <!-- <scope>test</scope> -->
+			<!-- <scope>test</scope> -->
 	</dependency>
-<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
 	<dependency>
 	    <groupId>io.cucumber</groupId>
 	    <artifactId>cucumber-core</artifactId>
 	    <version>${cucumbercore.version}</version>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
+		<!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
 	<dependency>
 	    <groupId>io.cucumber</groupId>
 	    <artifactId>gherkin</artifactId>
 	    <version>${gherkin.version}</version>
 	</dependency>
 
-	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 	<dependency>
 	    <groupId>org.seleniumhq.selenium</groupId>
 	    <artifactId>selenium-java</artifactId>
 	    <version>${seleniumjava.version}</version>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
 	<dependency>
 	    <groupId>org.seleniumhq.selenium</groupId>
 	    <artifactId>selenium-server</artifactId>
 	    <version>${seleniumserver.version}</version>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+		<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 	<dependency>
 	    <groupId>io.github.bonigarcia</groupId>
 	    <artifactId>webdrivermanager</artifactId>
 	    <version>${webdrivermanager.version}</version>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
 	<dependency>
 	    <groupId>org.seleniumhq.selenium</groupId>
 	    <artifactId>selenium-remote-driver</artifactId>
 	    <version>${seleniumremotedriver.version}</version>
 	</dependency>
-	 <!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
+		<!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
 	<dependency>
 	    <groupId>tech.grasshopper</groupId>
 	    <artifactId>extentreports-cucumber7-adapter</artifactId>
@@ -117,55 +128,55 @@
 	    <artifactId>cucumber-testng</artifactId>
 	    <version>${cucumbertestng.version}</version>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports-testng-adapter -->
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports-testng-adapter -->
 	<dependency>
 	    <groupId>com.aventstack</groupId>
 	    <artifactId>extentreports-testng-adapter</artifactId>
 	    <version>${extentTestng.version}</version>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 	<dependency>
 	    <groupId>com.aventstack</groupId>
 	    <artifactId>extentreports</artifactId>
 	    <version>${extentReport.version}</version>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 	<dependency>
 	    <groupId>io.rest-assured</groupId>
 	    <artifactId>rest-assured</artifactId>
 	    <version>${restassured.version}</version>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 	<dependency>
 	    <groupId>org.postgresql</groupId>
 	    <artifactId>postgresql</artifactId>
 	    <version>${postgresql.version}</version>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc10 -->
+		<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc10 -->
 	<dependency>
 	    <groupId>com.oracle.database.jdbc</groupId>
 	    <artifactId>ojdbc10</artifactId>
 	    <version>${ojdbc10.version}</version>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+		<!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
 	<dependency>
 	    <groupId>com.microsoft.sqlserver</groupId>
 	    <artifactId>mssql-jdbc</artifactId>
 	    <version>${mysqljdbc.version}</version>
 	</dependency>
-<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 	<dependency>
 	    <groupId>mysql</groupId>
 	    <artifactId>mysql-connector-java</artifactId>
 	    <version>${mysqlconnectorjava.version}</version>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 	<dependency>
 	    <groupId>org.apache.poi</groupId>
 	    <artifactId>poi-ooxml</artifactId>
 	    <version>${poiooxml.version}</version>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
 	<dependency>
 	    <groupId>org.apache.logging.log4j</groupId>
 	    <artifactId>log4j-core</artifactId>
@@ -184,7 +195,7 @@
 	    <version>${junitJupiter}</version>
 	    <scope>test</scope>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher -->
+		<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher -->
 	<dependency>
 	    <groupId>org.junit.platform</groupId>
 	    <artifactId>junit-platform-launcher</artifactId>
