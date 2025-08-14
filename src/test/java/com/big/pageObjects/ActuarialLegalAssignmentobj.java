@@ -42,13 +42,11 @@ public class ActuarialLegalAssignmentobj extends TestReusables {
 	    
 	    public void selectActions(String actions) throws InterruptedException {
 	         WebElement Actions = driver.findElement(By.xpath("(//span[@class='SizedText---medium_plus SizedText---predefined'])[2]"));
-	         Thread.sleep(3000);
-	         scrolltoElement(Actions);
 	         for (WebElement ActionsTab : actionsTabs) {                
 	                if (ActionsTab.getText().equalsIgnoreCase(actions)) {
 	                    System.out.print(actions);
 	                    System.out.println("ActionsTab: "+ ActionsTab.getText()); 
-	                   // scrolltoElement(Actions);
+	                    scrolltoElement(Actions);
 	                    Thread.sleep(4000);
 	                    clickUsingJS(ActionsTab, "actions"); 
 	                    break;  
@@ -56,43 +54,36 @@ public class ActuarialLegalAssignmentobj extends TestReusables {
 	            }
 	    }
 	    public void selectActuarialAnalysis(String str1) throws InterruptedException {
-	      Thread.sleep(6000);
-	      //System.out.print("Text123456789"+AssignProgram);
-	      enterText(actuarialUser,"actuarialanalysis", str1);
-	      System.out.print("enter texted successfuly");
-	      Thread.sleep(2000);
-	      keybordentry("Enter");
-	      Thread.sleep(2000);
-	      click(submitButton, "confirm_btn"); 
 	      Thread.sleep(4000);
+	      enterText(actuarialUser,"actuarialanalysis", str1);
+	      Thread.sleep(1000);
+	      keybordentry("Enter");
+	      Thread.sleep(1000);
+	      click(submitButton, "confirm_btn"); 
 	      }
 	    
 	    public void selectLegalAnalysis(String str2) throws InterruptedException {
-		      Thread.sleep(6000);
+		      Thread.sleep(4000);
 		      enterText(legalUser,"legalanalysis", str2);
 		      System.out.print("enter texted successfuly");
 		      Thread.sleep(2000);
 		      keybordentry("Enter");
-		      Thread.sleep(2000);
+		      Thread.sleep(1000);
 		      click(submitButton, "confirm_btn"); 
-		      Thread.sleep(4000);
 		      }
-	    public boolean isActuarialAnalystBlank() throws InterruptedException 
+	    public String ActuarialAnalystlabel() throws InterruptedException 
 	    {
 	Thread.sleep(3000);
 	        String actuariallabel = actuarialAnalyst.getText().replace("Actuarial Analyst", "").trim();
-	        System.out.println(actuarialAnalyst.getText());
-	        System.out.println("GeetText"+actuariallabel);
-	        return actuariallabel.isEmpty();
+	        return actuariallabel;
+	        
 	    }
-	    public boolean isLegalAnalystBlank() throws InterruptedException 
+	    public String LegalAnalystlabel() throws InterruptedException 
 	    {
 	Thread.sleep(3000);
-	        String legallabel = legalAnalyst.getText().replace("Legal Analyst", "").trim();
-	        System.out.println(legalAnalyst.getText());
-	        System.out.println("GeetText"+legallabel);
-	        return legallabel.isEmpty();
+	 String legallabel = legalAnalyst.getText().replace("Legal Analyst", "").trim();
+    return legallabel;
+	        
 	    }
-	    
 	}
 

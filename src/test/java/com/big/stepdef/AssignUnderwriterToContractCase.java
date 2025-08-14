@@ -37,7 +37,7 @@ public class AssignUnderwriterToContractCase {
 
 		Assertions.assertTrue(contractcasePreparationObj.isUnderwriterBlank(), "Underwriter label should be blank or absent");
 		Assertions.assertTrue(contractcasePreparationObj.isUnderwritingTeamBlank(), "Underwriting Team label should be blank or absent");
-
+      
 
 	}
 
