@@ -24,6 +24,18 @@ public class QPRLogin_Actions extends TestReusables {
 
 	@FindBy(xpath = "//strong[normalize-space()='REINSURANCE']")
 	private  WebElement reInsuranceText;
+	
+	@FindBy(xpath ="//input[@class=\"TextInput---text TextInput---align_start TextInput---inSideBySideItem\"][1]")
+    private  WebElement searchCaseForUnassignedPrograms;
+
+    @FindBy(xpath="//button//span[text()=\"Search\"][1]")
+    private WebElement searchButtonForCaseNumber;
+
+   public void searchCaseNumber(String searchCaseID) {
+       enterText(searchCaseForUnassignedPrograms, "caseNumber",searchCaseID);
+       click(searchButtonForCaseNumber, searchCaseID); 
+       System.out.println("Search Case Number");
+   }
 
 	public void verifyreInsuranceText() {
 		verifyElement(reInsuranceText, "REINSURANCE");

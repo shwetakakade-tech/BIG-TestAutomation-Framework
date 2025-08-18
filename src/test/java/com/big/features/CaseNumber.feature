@@ -7,7 +7,7 @@ Background:
     Then User navigates to Home category
   
  
-@appianhome   
+ @appianHome
 Scenario Outline: User navigates to Home tab 
     Given User selects the case "#133563" from the list
     And User navigate to "<CaseMenu>" CaseMenu tab
