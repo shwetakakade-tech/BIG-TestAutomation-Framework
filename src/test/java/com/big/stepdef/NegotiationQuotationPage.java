@@ -65,6 +65,7 @@ public class NegotiationQuotationPage {
     	negotiationQuotationObj.scroll_up_page_and_clickCommunication();
     	
     	negotiationQuotationObj.VerifyCommunicationtab();
+    	System.out.println();
     }
 
 		
