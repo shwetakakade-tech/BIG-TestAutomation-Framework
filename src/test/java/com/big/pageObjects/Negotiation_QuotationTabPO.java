@@ -119,14 +119,15 @@ public class Negotiation_QuotationTabPO extends TestReusables {
 	public void searchCaseNumber(String searchCaseID) {
 	       enterText(searchCaseId, "caseNumber",searchCaseID);
 	       click(clickSearchBtn, "buttonclick"); 
-	       System.out.println();
+	       
 	       
 	       	       
 	}
 	
 	public void openContractCase(String caseId) {
         WebElement caseNumber = driver.findElement(By.xpath("//a[text()='#" + caseId + "']"));
-        click(caseNumber,"Contract Case");}
+        click(caseNumber,"Contract Case");
+        System.out.println();}
 	
 	
 	

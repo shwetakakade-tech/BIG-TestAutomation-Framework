@@ -34,13 +34,14 @@ public class NegotiationQuotationPage {
 		negotiationQuotationObj.scroll_down_page();
 		negotiationQuotationObj.searchCaseNumber(caseId);
 		negotiationQuotationObj.openContractCase(caseId);
+		System.out.println();
 		
     }
 
     @Given("User navigates to the {string} tab")
     public void user_navigates_to_the_stage_tab(String stage) {
     	negotiationQuotationObj.scroll_to_Actions();
-    	System.out.println();
+    	
     	    	
     	    
     }
