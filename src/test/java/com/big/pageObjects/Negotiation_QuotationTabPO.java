@@ -119,6 +119,7 @@ public class Negotiation_QuotationTabPO extends TestReusables {
 	public void searchCaseNumber(String searchCaseID) {
 	       enterText(searchCaseId, "caseNumber",searchCaseID);
 	       click(clickSearchBtn, "buttonclick"); 
+	       System.out.println();
 	       
 	       	       
 	}
@@ -136,7 +137,7 @@ public class Negotiation_QuotationTabPO extends TestReusables {
 		System.out.print(ActualResult);
 		String expected = "prashant.todmal@bitsinglass.com";
 		Assert.assertEquals(expected, ActualResult);
-		System.out.println();
+		
 	}
 //(//p[@data-testid='ParagraphText-paragraph'][normalize-space()='namita.sharma@bitsinglass.com'])[1]
 

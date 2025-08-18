@@ -40,6 +40,7 @@ public class NegotiationQuotationPage {
     @Given("User navigates to the {string} tab")
     public void user_navigates_to_the_stage_tab(String stage) {
     	negotiationQuotationObj.scroll_to_Actions();
+    	System.out.println();
     	    	
     	    
     }

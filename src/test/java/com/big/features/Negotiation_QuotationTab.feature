@@ -1,6 +1,6 @@
 @test
 Feature: This feature file will send non binding refusal email
-   As a Case ManagerI want to send a non‑binding refusal email
+   As a Case Manager I want to send a non‑binding refusal email
 
 Background:
 		Given User login to Appian application as "CaseManager"
