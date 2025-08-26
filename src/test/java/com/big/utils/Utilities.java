@@ -234,8 +234,8 @@ public class Utilities {
             for (Row row : sheet) {
                 Cell idCell = row.getCell(0);
                 if (idCell != null && idCell.getStringCellValue().equalsIgnoreCase(testCaseId)) {
-                    String team = row.getCell(1).getStringCellValue();
-                    String underwriter = row.getCell(2).getStringCellValue();
+                    String team = row.getCell(2).getStringCellValue();
+                    String underwriter = row.getCell(3).getStringCellValue();
                     return new String[]{team, underwriter};
                 }
             }

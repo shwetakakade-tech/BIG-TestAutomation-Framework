@@ -9,14 +9,14 @@ Background:
  
 @appianhome   
 Scenario Outline: User navigates to Home tab 
-    Given User selects the case "#133563" from the list
+    When User opens a contract case from the Home tab "<testCaseID>"
     And User navigate to "<CaseMenu>" CaseMenu tab
     When User navigate to "Program Filing / Preparation" paragraphtab
     And User selects "<PrograamType>" of case
  Examples:
- |CaseMenu|    PrograamType     |
- |Summary |    Construction Type|
- #|Documents|
+ |CaseMenu|    PrograamType     |testCaseID|
+ |Summary |    Construction Type| TC_001 |
+ #|Documents|                   
  #|Communication|
  #|Notes|
       

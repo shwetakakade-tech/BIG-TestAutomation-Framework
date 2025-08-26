@@ -16,7 +16,10 @@ import io.cucumber.testng.CucumberOptions;
 features = {"src/test/java/com/big/features"},
 glue={"com.big.stepdef"},
 monochrome = true, 
-tags = "@actuarialassignment or @legalassignment",
+//tags = "@qa1",
+tags = "@appianHome1",
+//tags = "@AssignUnderwriter", 
+//tags = "@createCase",
 dryRun = false
 )
 
