@@ -23,26 +23,14 @@ import io.cucumber.junit.Cucumber;
 public class NegotiationQuotationPage {
 	
 	
-   
+	Utilities ut = new Utilities();
 	Negotiation_QuotationTabPO negotiationQuotationObj = new Negotiation_QuotationTabPO();
-	
-	
-	
-	@Given("User enters the case {string} from the list")
-    public void user_selects_the_case_from_the_list(String caseId) {
-      	
-		negotiationQuotationObj.scroll_down_page();
-		negotiationQuotationObj.searchCaseNumber(caseId);
-		negotiationQuotationObj.openContractCase(caseId);
-		System.out.println();
-		
-    }
+	ActuarialLegalAssignmentobj actuarialLegalobj = new ActuarialLegalAssignmentobj();
 
     @Given("User navigates to the {string} tab")
-    public void user_navigates_to_the_stage_tab(String stage) {
-    	negotiationQuotationObj.scroll_to_Actions();
-    	
-    	    	
+    public void user_navigates_to_the_stage_tab(String stage) throws InterruptedException {
+    	Thread.sleep(3000);
+    	negotiationQuotationObj.scroll_to_Actions();    	
     	    
     }
 
@@ -50,7 +38,6 @@ public class NegotiationQuotationPage {
     public void user_clicks_in_actions(String actionName)  {
     	negotiationQuotationObj.click_nonBinding_refusal_email();
     	
-        
     }
 
     @Then("User sends the non-binding refusal email via Action")
@@ -69,9 +56,7 @@ public class NegotiationQuotationPage {
     	negotiationQuotationObj.VerifyCommunicationtab();
     	System.out.println();
     }
-
-		
-	    
+   
 	}
 
 		

@@ -22,11 +22,14 @@ public class AssignUnderwriterToContractCase {
 	HomePage_Actions homeActionObj = new HomePage_Actions();
 	ContractCasePagePreparation_Actions contractcasePreparationObj = new ContractCasePagePreparation_Actions();
 
-	@When("User opens a contract case {string} from the Home tab")
-	public void user_opens_a_contract_case_from_the_home_tab(String caseId) {
-		homeActionObj.searchCaseNumber(caseId);
-		homeActionObj.openContractCase(caseId);
-
+	@When("User opens a contract case from the Home tab {string}")
+	public void user_opens_a_contract_case_from_the_home_tab(String testCaseID) throws InterruptedException {
+		homeActionObj.searchCaseNumber(ut.getCellValue("TestData_QPR",testCaseID,"Contract_ID"));
+		String contractid = ut.getCellValue("TestData_QPR",testCaseID,"Contract_ID");
+		System.out.println("contract no"+contractid);
+		Thread.sleep(3000);		//homeActionObj.openContractCase(Contract_ID);
+		homeActionObj.openContractCase(contractid);
+		
 	}
 
 	@When("No Underwriter or UW Team is assigned")
@@ -49,13 +52,16 @@ public class AssignUnderwriterToContractCase {
 	@When("User selects Underwriting Team and Underwriter for {string}")
 	public void user_selects_underwriting_data(String testCaseID) throws InterruptedException {
 
-		String[] data = ut.getTestData("TestData.xlsx", "AssignUnderWriter", testCaseID);
-
+		Thread.sleep(2000);
+		String[] data = ut.getTestData("TestData.xlsx", "TestData_QPR", testCaseID);
 		String team = data[0];
 
 		String underwriter = data[1];
-
+        
+        System.out.print("team fiels text "+team);
+        
 		contractcasePreparationObj.selectUnderwritingDetails(team, underwriter);
+		
 	}
 
 	@Then("the {string} stage should turn green")
@@ -90,5 +96,6 @@ public class AssignUnderwriterToContractCase {
 	}
 
 }
+
 
 

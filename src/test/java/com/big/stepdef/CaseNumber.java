@@ -16,7 +16,7 @@ public class CaseNumber {
 
 	@Given("User navigate to {string} CaseMenu tab")
 	public void user_navigate_to_case_menu_tab(String caseMenu) {
-		homeAtionobj.user_navigate_to_casemenu(caseMenu);
+		homeAtionobj.usernavigatetoCasemenu(caseMenu);
         System.out.println("Hello1");
 		
 	}
@@ -24,7 +24,7 @@ public class CaseNumber {
 	@When("User navigate to {string} paragraphtab")
 	public void user_navigate_to_paragraphtab(String paragraphTab) throws InterruptedException {
 		 Thread.sleep(4000);
-		    homeAtionobj.user_navigate_to_paragraphtabs(paragraphTab);
+		    homeAtionobj.usernavigatetoParagraphtabs(paragraphTab);
 		System.out.println("Hello2");
 	}
 

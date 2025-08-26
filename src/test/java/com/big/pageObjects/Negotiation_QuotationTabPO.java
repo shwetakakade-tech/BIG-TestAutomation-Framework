@@ -100,8 +100,6 @@ public class Negotiation_QuotationTabPO extends TestReusables {
         emailE.sendKeys("Lorem ipsum dolor sit amet");
         driver.switchTo().defaultContent();
 
-        
-		
 	}
 	
 	public void click_nonBinding_refusal_email()
@@ -112,24 +110,7 @@ public class Negotiation_QuotationTabPO extends TestReusables {
 		click(selectRecipientTo,"recipentToClick");
 		enterText(enterAdditionalRecipientTo, "additionalRecipient","namita.sharma@bitsinglass.com");
 		
-		
-		
 	}
-	
-	public void searchCaseNumber(String searchCaseID) {
-	       enterText(searchCaseId, "caseNumber",searchCaseID);
-	       click(clickSearchBtn, "buttonclick"); 
-	       
-	       
-	       	       
-	}
-	
-	public void openContractCase(String caseId) {
-        WebElement caseNumber = driver.findElement(By.xpath("//a[text()='#" + caseId + "']"));
-        click(caseNumber,"Contract Case");
-        System.out.println();}
-	
-	
 	
 	public void VerifyCommunicationtab()
 	{

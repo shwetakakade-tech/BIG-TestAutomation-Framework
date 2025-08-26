@@ -57,8 +57,9 @@ public class HomePage_Actions extends TestReusables {
     
 	public void searchCaseNumber(String searchCaseID) {
 
-		enterText(searchCaseForUnassignedPrograms, "caseNumber",searchCaseID);
-		click(searchButtonForCaseNumber, searchCaseID); 
+		enterText(searchCaseForUnassignedPrograms, "TC_001",searchCaseID);
+		click(searchButtonForCaseNumber, "searchbutton"); 
+	//	click(searchButtonForCaseNumber, searchCaseID); 
 		System.out.println("Search Case Number");
 	}
 
@@ -82,12 +83,17 @@ public class HomePage_Actions extends TestReusables {
 	/** * Opens a contract case from the Home tab using the provided case ID.
 	 * 
 	 * @author Dhanesh Bhor
+	 * @throws InterruptedException 
 	 * @date August 6, 2025
 	 */
 
-	public void openContractCase(String caseId) {
-		WebElement caseNumber = driver.findElement(By.xpath("//a[text()='#" + caseId + "']"));
-		click(caseNumber,"Contract Case");
+	public void openContractCase(String Contract_ID) throws InterruptedException {
+		//WebElement caseNumber = driver.findElement(By.xpath("//a[text()='#" + Case_ID + "']"));
+		WebElement caseNumber = driver.findElement(By.xpath("(//p)[16]"));
+		Thread.sleep(3000);
+		caseNumber.click();
+		//click(caseNumber,"Contract Case");
+		System.out.println("Print Case Number "+caseNumber.getText());
 	}
 
 
@@ -107,7 +113,7 @@ public class HomePage_Actions extends TestReusables {
 		System.out.println("using excel sheet "+caseNumber);
 	}
 
-	  public void user_navigate_to_casemenu(String caseMenu) {
+	  public void usernavigatetoCasemenu(String caseMenu) {
           for (WebElement casemenu : CaseMenuOptions) {
                  if (casemenu.getText().equalsIgnoreCase(caseMenu)) {
                      System.out.println("CaseMenu: "+ casemenu.getText());
@@ -116,7 +122,7 @@ public class HomePage_Actions extends TestReusables {
                  }
              }    
      }
-     public void user_navigate_to_paragraphtabs(String paragraphTab) throws InterruptedException {
+     public void usernavigatetoParagraphtabs(String paragraphTab) throws InterruptedException {
           for (WebElement ParagraphTab : ParagraphTabs) {
                  if (ParagraphTab.getText().equalsIgnoreCase(paragraphTab)) {
                      System.out.println("ParagraphTab: "+ ParagraphTab.getText());
@@ -126,7 +132,6 @@ public class HomePage_Actions extends TestReusables {
                  }
              }
      }
-
 
 
 
