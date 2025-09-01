@@ -1,10 +1,6 @@
 package com.big.utils;
 
 import java.io.*;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -245,6 +241,57 @@ public class Utilities {
         }
         return new String[]{"", ""};
     }
+	
+	
+	
+	
+	
+public Map<String, String> getTestDataAsMap(String filePath, String sheetName, String testCaseId) {
+        
+        Map<String, String> dataMap = new HashMap<>();
+
+        try (FileInputStream fis = new FileInputStream(filePath);
+             Workbook workbook = new XSSFWorkbook(fis)) {
+
+            Sheet sheet = workbook.getSheet(sheetName);
+
+            // Header row (first row in sheet)
+            Row headerRow = sheet.getRow(0);
+            if (headerRow == null) return dataMap;
+
+            // Loop through rows to find testCaseId
+            for (Row row : sheet) {
+                Cell idCell = row.getCell(0);
+                if (idCell != null && idCell.getStringCellValue().equalsIgnoreCase(testCaseId)) {
+
+                    // Build data map: columnName -> value
+                    for (int i = 0; i < row.getLastCellNum(); i++) {
+                        Cell headerCell = headerRow.getCell(i);
+                        if (headerCell == null) continue;
+
+                        String columnName = headerCell.getStringCellValue();
+                        Cell cell = row.getCell(i);
+                        String value = (cell != null) ? cell.toString() : "";
+
+                        dataMap.put(columnName, value);
+                    }
+                    break;
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return dataMap;
+    }
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
