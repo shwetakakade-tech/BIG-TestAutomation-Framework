@@ -39,7 +39,7 @@ public class ContractCasePagePreparation_Actions extends TestReusables {
 	@FindBy (xpath = "(//span[text()='Assign Underwriter'])[1]")
 	private WebElement assignUnderWriterButton;
 
-	@FindBy (xpath = "//div[contains(@class,'DropdownWidget---placeholder')]")
+	@FindBy (xpath = "(//div[contains(@class,'DropdownWidget')])[1]//div//div") // //div[contains(@class,'DropdownWidget---placeholder')]
 	private WebElement underWritingTeamDropdown;
 
 	@FindBy (xpath = "//input[contains(@class, 'PickerWidget---picker_input')]")
@@ -63,6 +63,18 @@ public class ContractCasePagePreparation_Actions extends TestReusables {
 
 	@FindBy (xpath = "//strong[text()='Actions']")
 	private WebElement actionsModule;
+	
+	@FindBy (xpath = "(//button[contains(@type,'button')]//span[text()='Reassign Underwriter'])[1]")
+	private WebElement reassignUnderWriterButton;
+
+
+	@FindBy (xpath = "//div[contains(@class,'DropdownWidget---dropdown')]//span")
+	private WebElement reassignUnderWriterTeam;
+
+	@FindBy (xpath = "//a[contains(@class,'PickerTokenWidget---remove elements---global')]")
+	//class="PickerTokenWidget---remove elements---global_a"
+	private WebElement removeUnderWriter;
+
 
 
 	/**
@@ -125,9 +137,17 @@ public class ContractCasePagePreparation_Actions extends TestReusables {
 	 * @date August 6, 2025
 	 */
 
-	public void assignUnderWriter() 
+	public void clickOnAssignUnderWriter() 
 	{
 		clickUsingJS(assignUnderWriterButton,"Assign Underwriter Button");
+
+	}
+	
+	public void clickOnReassignUnderWriter() 
+	{
+		waitForPageToLoad(driver, By.xpath("(//button[contains(@type,'button')]//span[text()='Reassign Underwriter'])[1]"),20);
+		clickUsingJS(reassignUnderWriterButton,"Clicked On Reassign Underwriter Button");
+		waitForPageToLoad(driver, By.xpath("//span[contains(@class,'PickerTokenWidget---label')]"),20);
 
 	}
 
@@ -140,16 +160,17 @@ public class ContractCasePagePreparation_Actions extends TestReusables {
 	 * @throws InterruptedException if thread sleep is interrupted
 	 * @author Dhanesh Bhor
 	 */
-	public void selectUnderwritingDetails(String teamName, String underwriterName) throws InterruptedException 
+
+	public void selectUnderwritingTeam(String teamName) throws InterruptedException 
 	{
 		clickUsingJS(underWritingTeamDropdown,"UnderWriting Team");
-		System.out.println("Number of teams found: " + underWriterTeams.size());
+		System.out.println(" Number of teams found: " + underWriterTeams.size());
 		boolean teamFound  = false;
 		for (WebElement underWriterTeam : underWriterTeams) { 
 			String actualText = underWriterTeam.getText().trim();
 			String expectedText = teamName.trim();
-			System.out.println("Validate Actual UnderWriting Team" + actualText);
-			System.out.println("Validate Expected UnderWriting Team" +expectedText);
+			System.out.println("Validate Actual UnderWriting Team " + actualText);
+			System.out.println("Validate Expected UnderWriting Team " +expectedText);
 
 			if (actualText.equalsIgnoreCase(expectedText)) 
 			{
@@ -164,9 +185,10 @@ public class ContractCasePagePreparation_Actions extends TestReusables {
 		if (!teamFound) {
 			throw new RuntimeException("❌ Underwriting Team not found: " + teamName);
 		}
+	}
 
 
-		Thread.sleep(2000);
+	public void selectUnderwriter(String underwriterName)throws InterruptedException  {
 
 		clickUsingJS(underWriterTextBox,"UnderWriter");
 		underWriterTextBox.clear();   
@@ -178,6 +200,7 @@ public class ContractCasePagePreparation_Actions extends TestReusables {
 		clickUsingJS(assignButton,"ASSIGN BUTTON");
 
 	}
+	
 
 	/**
 	 * Checks if the specified stage is currently focused.
@@ -222,6 +245,31 @@ public class ContractCasePagePreparation_Actions extends TestReusables {
 		}
 
 		return allPresent;
+	}
+	
+	
+	public void openStage(String stage) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		waitForPageToLoad(driver, By.xpath("//strong[text()='Stakeholders']"),20);
+		for (WebElement stageElement : stages) {
+
+			System.out.println("Actual Stage: " + stageElement.getText().trim());
+			System.out.println("Expected Stage: " + stage.trim());
+			if (stageElement.getText().trim().equalsIgnoreCase(stage.trim())) {
+				click(stageElement, "asdfdsaasdStage: " + stage);
+				Thread.sleep(3000);
+				break;
+			}
+		}
+
+	}
+
+	public void removeUnderwriter()
+	{
+		click(removeUnderWriter,"Removed existing underwriter");
+		waitForPageToLoad(driver, By.xpath("//div[contains(@class,'margin_above_none')]//input[contains(@class, 'PickerWidget---picker_input')]"),20);
+
 	}
 
 
