@@ -1,10 +1,10 @@
 package com.big.stepdef;
 
 import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+
 
 import com.big.pageObjects.CommonObj;
 import com.big.pageObjects.ContractCasePagePreparation_Actions;
@@ -26,7 +26,7 @@ public class AssignUnderwriterToContractCase {
 	public void user_opens_a_contract_case_from_the_home_tab(String testCaseID) throws InterruptedException {
 		homeActionObj.searchCaseNumber(ut.getCellValue("TestData_QPR",testCaseID,"Contract_ID"));
 		String contractid = ut.getCellValue("TestData_QPR",testCaseID,"Contract_ID");
-		System.out.println("contract no"+contractid);
+		System.out.println("contract no "+contractid);
 		Thread.sleep(3000);		//homeActionObj.openContractCase(Contract_ID);
 		homeActionObj.openContractCase(contractid);
 		
@@ -35,8 +35,8 @@ public class AssignUnderwriterToContractCase {
 	@When("No Underwriter or UW Team is assigned")
 	public void no_underwriter_or_uw_team_is_assigned() {
 
-		System.out.println("Validate UnderWriter is Blank"+contractcasePreparationObj.isUnderwriterBlank());
-		System.out.println("Validate UnderWriting Team is Blank"+contractcasePreparationObj.isUnderwritingTeamBlank());
+		System.out.println("Validate UnderWriter is Blank "+contractcasePreparationObj.isUnderwriterBlank());
+		System.out.println("Validate UnderWriting Team is Blank "+contractcasePreparationObj.isUnderwritingTeamBlank());
 
 		Assertions.assertTrue(contractcasePreparationObj.isUnderwriterBlank(), "Underwriter label should be blank or absent");
 		Assertions.assertTrue(contractcasePreparationObj.isUnderwritingTeamBlank(), "Underwriting Team label should be blank or absent");
@@ -46,21 +46,24 @@ public class AssignUnderwriterToContractCase {
 
 	@When("User clicks on the ASSIGN UNDERWRITER action")
 	public void user_clicks_on_the_action() {
-		contractcasePreparationObj.assignUnderWriter();
+		contractcasePreparationObj.clickOnAssignUnderWriter();
 	}
 
 	@When("User selects Underwriting Team and Underwriter for {string}")
 	public void user_selects_underwriting_data(String testCaseID) throws InterruptedException {
 
-		Thread.sleep(2000);
-		String[] data = ut.getTestData("TestData.xlsx", "TestData_QPR", testCaseID);
-		String team = data[0];
+		Thread.sleep(2000);	
+		
+		Map<String, String> data = ut.getTestDataAsMap("TestData.xlsx", "TestData_QPR", testCaseID);
 
-		String underwriter = data[1];
+		String team = data.get("UnderwritingTeam");
+		String underwriter = data.get("UnderWriter");
         
-        System.out.print("team fiels text "+team);
+        System.out.println("team fields text "+team);
         
-		contractcasePreparationObj.selectUnderwritingDetails(team, underwriter);
+		contractcasePreparationObj.selectUnderwritingTeam(team);
+		
+		contractcasePreparationObj.selectUnderwriter(underwriter);
 		
 	}
 
@@ -93,6 +96,26 @@ public class AssignUnderwriterToContractCase {
 		}
 
 		System.out.println("Both UW Team and Underwriter labels are populated.");
+	}
+	
+	
+	
+	@When("User Opens {string} stage under summary")
+	public void user_opens_stage_under_summary(String stage) throws InterruptedException {
+
+		contractcasePreparationObj.openStage(stage);
+		System.out.println("Opened stage: " + stage);
+
+	}	
+
+	@When("User clicks on the REASSIGN UNDERWRITER action")
+	public void user_clicks_on_the_reassign_underwriter_action() {
+		contractcasePreparationObj.clickOnReassignUnderWriter();
+		System.out.println("Clicked on Reassign Underwriter action");
+		
+		contractcasePreparationObj.removeUnderwriter();
+		
+
 	}
 
 }
