@@ -250,30 +250,30 @@ public class Utilities {
 	
 	//=================================================================================
 	
-//	public String[] getTestData(String filePath, String sheetName, String testCaseId) {
-//	    try (FileInputStream fis = new FileInputStream(filePath);
-//	         Workbook workbook = new XSSFWorkbook(fis)) {
-//
-//	        Sheet sheet = workbook.getSheet(sheetName);
-//
-//	        for (Row row : sheet) {
-//	            Cell idCell = row.getCell(0);
-//	            if (idCell != null && idCell.getStringCellValue().equalsIgnoreCase(testCaseId)) {
-//	                int lastCellNum = row.getLastCellNum();
-//	                String[] data = new String[lastCellNum];
-//	                for (int i = 0; i < lastCellNum; i++) {
-//	                    Cell cell = row.getCell(i);
-//	                    data[i] = (cell != null) ? cell.toString() : "";
-//	                }
-//	                return data;
-//	            }
-//	        }
-//
-//	    } catch (IOException e) {
-//	        e.printStackTrace();
-//	    }
-//	    return new String[]{};
-//	}
+	public String[] getTestData(String filePath, String sheetName, String testCaseId) {
+	    try (FileInputStream fis = new FileInputStream(filePath);
+	         Workbook workbook = new XSSFWorkbook(fis)) {
+
+	        Sheet sheet = workbook.getSheet(sheetName);
+
+	        for (Row row : sheet) {
+	            Cell idCell = row.getCell(0);
+	            if (idCell != null && idCell.getStringCellValue().equalsIgnoreCase(testCaseId)) {
+	                int lastCellNum = row.getLastCellNum();
+	                String[] data = new String[lastCellNum];
+	                for (int i = 0; i < lastCellNum; i++) {
+	                    Cell cell = row.getCell(i);
+	                    data[i] = (cell != null) ? cell.toString() : "";
+	                }
+	                return data;
+	            }
+	        }
+
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	    return new String[]{};
+	}
 	
 	
 	
@@ -282,7 +282,7 @@ public class Utilities {
 	
 	// Fetch test data as a map of column names to values
 	
-	public Map<String, String> getTestData(String filePath, String sheetName, String testCaseId) {
+	public Map<String, String> getTestDataAsMap(String filePath, String sheetName, String testCaseId) {
 		
 	    Map<String, String> dataMap = new HashMap<>();
 

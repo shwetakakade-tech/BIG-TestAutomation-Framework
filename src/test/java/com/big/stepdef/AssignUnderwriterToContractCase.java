@@ -60,7 +60,7 @@ public class AssignUnderwriterToContractCase {
 //		String underwriter = data[4];
 		
 		
-		Map<String, String> data = ut.getTestData("TestData.xlsx", "TestData_QPR", testCaseID);
+		Map<String, String> data = ut.getTestDataAsMap("TestData.xlsx", "TestData_QPR", testCaseID);
 
 		String team = data.get("UnderwritingTeam");
 		String underwriter = data.get("UnderWriter");
