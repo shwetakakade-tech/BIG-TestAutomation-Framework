@@ -264,14 +264,16 @@ public class ContractCasePagePreparation_Actions extends TestReusables {
 		}
 
 	}
-
+	
+     // to remove underwriter
 	public void removeUnderwriter()
 	{
 		click(removeUnderWriter,"Removed existing underwriter");
 		waitForPageToLoad(driver, By.xpath("//div[contains(@class,'margin_above_none')]//input[contains(@class, 'PickerWidget---picker_input')]"),20);
 
 	}
-
+ 
+	
 
 
 

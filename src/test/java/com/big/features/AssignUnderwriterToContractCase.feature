@@ -1,4 +1,4 @@
-@AssignUnderwriter
+@ReassignUnderwriter
 Feature: Assign Underwriter and Underwriter Team
 
   #TC_001 is used for Assign Underwriter and Underwriter Team

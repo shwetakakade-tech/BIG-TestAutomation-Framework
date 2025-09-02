@@ -4,8 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+
 
 import com.big.pageObjects.CommonObj;
 import com.big.pageObjects.ContractCasePagePreparation_Actions;
@@ -53,12 +52,7 @@ public class AssignUnderwriterToContractCase {
 	@When("User selects Underwriting Team and Underwriter for {string}")
 	public void user_selects_underwriting_data(String testCaseID) throws InterruptedException {
 
-		Thread.sleep(2000);
-//		String[] data = ut.getTestData("TestData.xlsx", "TestData_QPR", testCaseID);
-//		String team = data[3];
-//
-//		String underwriter = data[4];
-		
+		Thread.sleep(2000);	
 		
 		Map<String, String> data = ut.getTestDataAsMap("TestData.xlsx", "TestData_QPR", testCaseID);
 
@@ -117,7 +111,7 @@ public class AssignUnderwriterToContractCase {
 	@When("User clicks on the REASSIGN UNDERWRITER action")
 	public void user_clicks_on_the_reassign_underwriter_action() {
 		contractcasePreparationObj.clickOnReassignUnderWriter();
-		System.out.println("Clicked on Reassign Underwriter action------------------");
+		System.out.println("Clicked on Reassign Underwriter action");
 		
 		contractcasePreparationObj.removeUnderwriter();
 		
