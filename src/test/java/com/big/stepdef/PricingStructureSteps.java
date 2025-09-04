@@ -3,7 +3,7 @@ package com.big.stepdef;
 import org.junit.runner.RunWith;
 
 import com.big.pageObjects.AddQuotation_Actions;
-import com.big.pageObjects.Negotiation_QuotationTabPO;
+
 import com.big.pageObjects.PricingStructure_Actions;
 import com.big.utils.Utilities;
 
