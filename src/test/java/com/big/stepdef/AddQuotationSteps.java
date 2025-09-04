@@ -1,16 +1,11 @@
 package com.big.stepdef;
 
-import java.util.concurrent.TimeUnit;
+
 
 import org.junit.runner.RunWith;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import com.big.pageObjects.*;
 import com.big.utils.Utilities;
-
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -26,21 +21,18 @@ public class AddQuotationSteps {
 	ActuarialLegalAssignmentobj actuarialLegalobj = new ActuarialLegalAssignmentobj();
 
    
-	
-         
-    
 
     @Given("the user navigates to the {string} tab")
     public void the_user_navigates_to_the_tab(String stage) throws InterruptedException {
-    	Thread.sleep(3000);
+    	Thread.sleep(4000);
     	addQuotActionsObj.scroll_to_Actions();
-    	
-    	
+    
         
     }
 
     @When("the user clicks {string} via Action")
-    public void the_user_navigates_to_the_named_tab(String tabName) {
+    public void the_user_navigates_to_the_named_tab(String Name) throws InterruptedException {
+    	
     	addQuotActionsObj.click_add_quotation();
        
     }
@@ -51,16 +43,17 @@ public class AddQuotationSteps {
     	
     	addQuotActionsObj.click_send_button();
     	
+    	
         
 
         
     }
 
     @And("the user verifies quotation values in the {string} tab")
-    public void the_user_verifies_quotation_values_in_the_tab(String tabName) throws InterruptedException {
+    public void user_verifies_quotation_values_in_quotation_tab(String tabName) throws InterruptedException {
     	addQuotActionsObj.scroll_and_click();
     	addQuotActionsObj.verify_Quotation_values();
-        
+    	
 
         
     }

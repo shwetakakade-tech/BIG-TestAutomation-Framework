@@ -1,7 +1,7 @@
 @AddQuotation
 Feature: Add Quotation when the user navigates to the Negotiation/Quotation tab
  
-#Name of Author Name:Namita
+#Name of Author:Namita
 #Prerequisite for this Scenario is to select case Number from Assigned Program where Legal Analyst is already being assigned*/
 
   

@@ -1,7 +1,7 @@
 @PricingStructure
 Feature: This feature file describe to add pricing structure when the user navigates to the In-depth Analysis tab
  
-#Name of Author: Namita 
+#Name of Author : Namita 
 #Prerequisite for this Scenario is to select everytime a new case Number from Assigned Program 
 #And to update the pricing structure in In-depth analysis tab
 
