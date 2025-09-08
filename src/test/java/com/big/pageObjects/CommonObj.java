@@ -449,7 +449,8 @@ public class CommonObj extends TestReusables {
 
 	public void user_navigate_to_programType(String programType) throws InterruptedException {
 		System.out.println(" size:" + paragraphtypes.size());
-		driver.navigate().refresh();
+		//commented driver.navigate().refresh(); by Rucha Joshi 
+		//driver.navigate().refresh();
 		Thread.sleep(3000);
 		for (WebElement ParagraphType : paragraphtypes) {
 
